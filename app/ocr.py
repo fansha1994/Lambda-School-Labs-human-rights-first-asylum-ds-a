@@ -22,12 +22,13 @@ from io import BytesIO
 import app.test
 
 router = APIRouter()
-# print('dir ', os.listdir('..'))
+
 load_dotenv(find_dotenv())
 database_url = os.getenv('DATABASE_URL')
-# print('test db?',database_url)
 
-engine = sqlalchemy.create_engine(database_url)
+
+# "Could not parse rfc1738 URL from string" error | Needs to be fixed during DB integration
+# engine = sqlalchemy.create_engine(database_url)
 
 @router.post('/insert')
 async def insertDoc(file: bytes = File(...)):
