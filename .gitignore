@@ -2,6 +2,9 @@
 .vscode/
 temporary.db
 
+# Local Notebooks
+notebooks/quick-and-dirty-entity-extractions.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
