@@ -1,21 +1,9 @@
-FROM python:3.7.9-slim-buster
-RUN apt-get update 
-RUN apt-get -y install poppler-utils --fix-missing
-RUN apt-get -y install tesseract-ocr
-RUN apt-get -y install git
 
-RUN git clone git://github.com/yyuu/pyenv.git .pyenv
-ENV HOME  /home/user
-ENV PYENV_ROOT $HOME/.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> .bashrc
-RUN echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> .bashrc
-RUN echo 'eval "$(pyenv init -)"' >> .bashrc
-
-
+FROM python:3.8-slim-buster
+ENV PYTHONUNBUFFERED 1
 RUN python -m pip install --upgrade pip && pip install pipenv
 COPY Pipfile* ./
-RUN pipenv install --deploy
+RUN pipenv install --system --deploy
 COPY ./app ./app
 EXPOSE 8000
-CMD uvicorn app.main:app --host 0.0.0.0 
+CMD uvicorn app.main:app --host 0.0.0.0 --port 8000
