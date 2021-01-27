@@ -2,6 +2,7 @@ FROM python:3.7.9-slim-buster
 RUN apt-get update 
 RUN apt-get -y install poppler-utils --fix-missing
 RUN apt-get -y install tesseract-ocr
+RUN apt-get -y install git
 
 RUN git clone git://github.com/yyuu/pyenv.git .pyenv
 ENV HOME  /home/user
