@@ -54,22 +54,6 @@ async def test():
     return cur.fetchall()
     
 
-
-# @router.get('/insert_test')
-# async def insert_test():
-#     conn = get_db_connection()
-
-#     record = ['test', 'test', 'test', 'test', 'test', 'test', 'test',
-#                 'test', 'test', 'test', 'test', 'test', 'test', 'test']
-#     df = pd.dataframe(record)
-#     # with conn.cursor as cur:
-#     #     cur.execute("""INSERT INTO case VALUES ('test', 'test', 'test', 'test', 'test', 'test, 'test',
-#     #                                             'test', 'test', 'test', 'test', 'test', 'test', 'test');
-#     #                 """)
-#     #     cur.commit()
-#         # cur.execute("""INSERT INTO case VALUES 
-#         #             """)
-#     df.to_sql('case', con=conn)
     
 
 
