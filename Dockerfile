@@ -2,6 +2,7 @@ FROM python:3.7.9-slim-buster
 RUN apt-get update 
 RUN apt-get -y install poppler-utils --fix-missing
 RUN apt-get -y install tesseract-ocr
+RUN apt-get -y install pyenv
 RUN python -m pip install --upgrade pip && pip install pipenv
 COPY Pipfile* ./
 RUN pipenv install --deploy
