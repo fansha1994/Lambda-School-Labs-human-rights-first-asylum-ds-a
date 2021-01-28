@@ -1,27 +1,24 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
-jupyter = "*"
-pytest = "*"
+name = "pypi"
 
 [packages]
 fastapi = "*"
 fastapi-utils = "*"
-uvicorn = {extras = ["standard"], version = "*"}
+uvicorn = "*"
 sqlalchemy = "*"
 pytesseract = "*"
 pdf2image = "*"
 pillow = "*"
-cmake = "*"
-pandas = "*"
-python-multipart = "*"
-dataclasses = "*"
 psycopg2-binary = "*"
 python-dotenv = "*"
 pypdf2 = "*"
+python-multipart = "*"
+pandas = "*"
+pipx = "*"
+
+[dev-packages]
 
 [requires]
-python_version = "3.7.9"
+python_version = "3"

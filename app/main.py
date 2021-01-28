@@ -4,6 +4,7 @@ import uvicorn
 import os
 import app.test
 import app.ocr as ocr
+import app.routes as routes
 exit
 
 app = FastAPI(
@@ -12,6 +13,8 @@ app = FastAPI(
 )
 
 app.include_router(ocr.router, tags=['PDF Converter'])
+app.include_router(routes.router, tags=['Routes'])
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
