@@ -17,6 +17,7 @@ pypdf2 = "*"
 python-multipart = "*"
 pandas = "*"
 pipx = "*"
+gunicorn = "*"
 
 [dev-packages]
 
